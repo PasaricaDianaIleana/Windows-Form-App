@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZvnIQyVEPLWZMTOlGAPvU2tWZ7++03FfZncvMVKm1/kmxWO3iD7nVWr6KLmykXQ/TDMb0m5Inzsl13PGBHdo9Q==",
+  "dgSpecHash": "vzRRd3gJxZaayV9PDAMKCCgzXvE50WtEVjOJTARWeilqFho2N5Vcap6Fvkz3Gjtvx3rdhqd4ZMTw/XBo0C/GhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pasar\\Desktop\\FormsApp\\DataLibrary\\DataLibrary.csproj",
+  "projectFilePath": "C:\\Users\\pasar\\Desktop\\Windows-Form-App\\DataLibrary\\DataLibrary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

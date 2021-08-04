@@ -209,18 +209,18 @@ namespace FormsApp
             this.exitLabel.AutoSize = true;
             this.exitLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.exitLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.exitLabel.Location = new System.Drawing.Point(775, 9);
+            this.exitLabel.Location = new System.Drawing.Point(708, 9);
             this.exitLabel.Name = "exitLabel";
             this.exitLabel.Size = new System.Drawing.Size(22, 23);
             this.exitLabel.TabIndex = 11;
             this.exitLabel.Text = "X";
             this.exitLabel.Click += new System.EventHandler(this.exitLabel_Click);
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(739, 428);
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.registerLabel1);
@@ -233,7 +233,7 @@ namespace FormsApp
             this.Controls.Add(this.userNameTxtBox);
             this.Controls.Add(this.guna2CircleButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
