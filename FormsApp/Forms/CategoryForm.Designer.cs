@@ -37,14 +37,11 @@ namespace FormsApp.Forms
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            this.productNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.categoryNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.productIdTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.idLable = new System.Windows.Forms.Label();
             this.titleLable = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.descriptionTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.categoryLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -161,29 +158,30 @@ namespace FormsApp.Forms
             this.addButton.TabIndex = 5;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // productNameTextBox
+            // categoryNameTextBox
             // 
-            this.productNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.productNameTextBox.DefaultText = "";
-            this.productNameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.productNameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.productNameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.productNameTextBox.DisabledState.Parent = this.productNameTextBox;
-            this.productNameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.productNameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.productNameTextBox.FocusedState.Parent = this.productNameTextBox;
-            this.productNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.productNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.productNameTextBox.HoverState.Parent = this.productNameTextBox;
-            this.productNameTextBox.Location = new System.Drawing.Point(126, 177);
-            this.productNameTextBox.Name = "productNameTextBox";
-            this.productNameTextBox.PasswordChar = '\0';
-            this.productNameTextBox.PlaceholderText = "";
-            this.productNameTextBox.SelectedText = "";
-            this.productNameTextBox.ShadowDecoration.Parent = this.productNameTextBox;
-            this.productNameTextBox.Size = new System.Drawing.Size(286, 31);
-            this.productNameTextBox.TabIndex = 4;
+            this.categoryNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.categoryNameTextBox.DefaultText = "";
+            this.categoryNameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.categoryNameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.categoryNameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.categoryNameTextBox.DisabledState.Parent = this.categoryNameTextBox;
+            this.categoryNameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.categoryNameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.categoryNameTextBox.FocusedState.Parent = this.categoryNameTextBox;
+            this.categoryNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.categoryNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.categoryNameTextBox.HoverState.Parent = this.categoryNameTextBox;
+            this.categoryNameTextBox.Location = new System.Drawing.Point(126, 177);
+            this.categoryNameTextBox.Name = "categoryNameTextBox";
+            this.categoryNameTextBox.PasswordChar = '\0';
+            this.categoryNameTextBox.PlaceholderText = "";
+            this.categoryNameTextBox.SelectedText = "";
+            this.categoryNameTextBox.ShadowDecoration.Parent = this.categoryNameTextBox;
+            this.categoryNameTextBox.Size = new System.Drawing.Size(286, 31);
+            this.categoryNameTextBox.TabIndex = 4;
             // 
             // NameLabel
             // 
@@ -195,40 +193,6 @@ namespace FormsApp.Forms
             this.NameLabel.Size = new System.Drawing.Size(76, 23);
             this.NameLabel.TabIndex = 3;
             this.NameLabel.Text = "Name:";
-            // 
-            // productIdTextBox
-            // 
-            this.productIdTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.productIdTextBox.DefaultText = "";
-            this.productIdTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.productIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.productIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.productIdTextBox.DisabledState.Parent = this.productIdTextBox;
-            this.productIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.productIdTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.productIdTextBox.FocusedState.Parent = this.productIdTextBox;
-            this.productIdTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.productIdTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.productIdTextBox.HoverState.Parent = this.productIdTextBox;
-            this.productIdTextBox.Location = new System.Drawing.Point(93, 119);
-            this.productIdTextBox.Name = "productIdTextBox";
-            this.productIdTextBox.PasswordChar = '\0';
-            this.productIdTextBox.PlaceholderText = "";
-            this.productIdTextBox.SelectedText = "";
-            this.productIdTextBox.ShadowDecoration.Parent = this.productIdTextBox;
-            this.productIdTextBox.Size = new System.Drawing.Size(286, 31);
-            this.productIdTextBox.TabIndex = 2;
-            // 
-            // idLable
-            // 
-            this.idLable.AutoSize = true;
-            this.idLable.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.idLable.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.idLable.Location = new System.Drawing.Point(22, 119);
-            this.idLable.Name = "idLable";
-            this.idLable.Size = new System.Drawing.Size(34, 23);
-            this.idLable.TabIndex = 1;
-            this.idLable.Text = "Id:";
             // 
             // titleLable
             // 
@@ -244,57 +208,31 @@ namespace FormsApp.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel1.Controls.Add(this.categoryLabel);
             this.panel1.Controls.Add(this.productGridView);
             this.panel1.Controls.Add(this.deleteButton);
             this.panel1.Controls.Add(this.editButton);
             this.panel1.Controls.Add(this.addButton);
-            this.panel1.Controls.Add(this.descriptionTextBox);
-            this.panel1.Controls.Add(this.descriptionLabel);
-            this.panel1.Controls.Add(this.productNameTextBox);
+            this.panel1.Controls.Add(this.categoryNameTextBox);
             this.panel1.Controls.Add(this.NameLabel);
-            this.panel1.Controls.Add(this.productIdTextBox);
-            this.panel1.Controls.Add(this.idLable);
             this.panel1.Controls.Add(this.titleLable);
             this.panel1.Location = new System.Drawing.Point(50, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1124, 508);
             this.panel1.TabIndex = 5;
             // 
-            // descriptionTextBox
+            // categoryLabel
             // 
-            this.descriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.descriptionTextBox.DefaultText = "";
-            this.descriptionTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.descriptionTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.descriptionTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.descriptionTextBox.DisabledState.Parent = this.descriptionTextBox;
-            this.descriptionTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.descriptionTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.descriptionTextBox.FocusedState.Parent = this.descriptionTextBox;
-            this.descriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.descriptionTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.descriptionTextBox.HoverState.Parent = this.descriptionTextBox;
-            this.descriptionTextBox.Location = new System.Drawing.Point(126, 239);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.PasswordChar = '\0';
-            this.descriptionTextBox.PlaceholderText = "";
-            this.descriptionTextBox.SelectedText = "";
-            this.descriptionTextBox.ShadowDecoration.Parent = this.descriptionTextBox;
-            this.descriptionTextBox.Size = new System.Drawing.Size(286, 31);
-            this.descriptionTextBox.TabIndex = 7;
+            this.categoryLabel.AutoSize = true;
+            this.categoryLabel.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.categoryLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.categoryLabel.Location = new System.Drawing.Point(144, 69);
+            this.categoryLabel.Name = "categoryLabel";
+            this.categoryLabel.Size = new System.Drawing.Size(173, 26);
+            this.categoryLabel.TabIndex = 14;
+            this.categoryLabel.Text = "Category Form";
             // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.descriptionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.descriptionLabel.Location = new System.Drawing.Point(3, 239);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(117, 23);
-            this.descriptionLabel.TabIndex = 5;
-            this.descriptionLabel.Text = "Description";
-            // 
-            // SellerForm
+            // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -302,7 +240,7 @@ namespace FormsApp.Forms
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SellerForm";
+            this.Name = "CategoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SellerForm";
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
@@ -319,13 +257,10 @@ namespace FormsApp.Forms
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;
-        private Guna.UI2.WinForms.Guna2TextBox productNameTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox categoryNameTextBox;
         private System.Windows.Forms.Label NameLabel;
-        private Guna.UI2.WinForms.Guna2TextBox productIdTextBox;
-        private System.Windows.Forms.Label idLable;
         private System.Windows.Forms.Label titleLable;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2TextBox descriptionTextBox;
-        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Label categoryLabel;
     }
 }
