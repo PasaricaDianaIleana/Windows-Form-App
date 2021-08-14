@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using DataLibrary;
 using DataLibrary.DataAccess;
+
 namespace FormsApp.Forms
 {
     public partial class CategoryForm : Form

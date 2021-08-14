@@ -236,8 +236,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary2\DataLibrary.csproj">
-      <Project>{8fb7363a-6033-4d52-9519-b26862b7b78d}</Project>
+    <ProjectReference Include="..\DataLibrary\DataLibrary.csproj">
+      <Project>{111d7e67-375f-45d1-ac82-53f3daff67f3}</Project>
       <Name>DataLibrary</Name>
     </ProjectReference>
   </ItemGroup>

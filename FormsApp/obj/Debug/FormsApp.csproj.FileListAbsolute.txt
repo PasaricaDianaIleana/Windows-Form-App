@@ -190,11 +190,14 @@ C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Bunifu.UI.WinFor
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Bunifu.UI.WinForms.Deprecated.dll
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Dapper.dll
+C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\DataLibrary.dll
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Guna.UI2.dll
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Data.SqlClient.dll
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Security.AccessControl.dll
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Security.Permissions.dll
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\DataLibrary.pdb
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
@@ -228,6 +231,7 @@ C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Bunifu.UI.WinFor
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\Dapper.xml
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Data.SqlClient.xml
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Security.AccessControl.xml
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Security.Permissions.xml
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Security.Principal.Windows.xml
@@ -242,7 +246,3 @@ C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.csproj.
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.csproj.CopyComplete
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.exe
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.pdb
-C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\DataLibrary.dll
-C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Data.SqlClient.dll
-C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\DataLibrary.pdb
-C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\bin\Debug\System.Data.SqlClient.xml

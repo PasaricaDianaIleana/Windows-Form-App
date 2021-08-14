@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.DataAccess
 {
-    interface IDataRepository
+   public interface IDataRepository
     {
         Category CreateCategory(Category model);
     }
