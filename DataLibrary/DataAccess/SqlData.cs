@@ -24,5 +24,16 @@ namespace DataLibrary.DataAccess
                 return model;
             }
         }
+
+        public List<Category> GetCategory()
+        {
+            List<Category> output;
+            using (IDbConnection connection= 
+                new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                output = connection.Query<Category>("dbo.spGetCategory").ToList();
+            }
+            return output;
+        }
     }
 }

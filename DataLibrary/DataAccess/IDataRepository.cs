@@ -9,5 +9,6 @@ namespace DataLibrary.DataAccess
    public interface IDataRepository
     {
         Category CreateCategory(Category model);
+        List<Category> GetCategory();
     }
 }
