@@ -9,12 +9,13 @@ namespace FormsApp.Forms
     public partial class CategoryForm : Form
     {
 
-        private List<Category> categories;
+      
         public CategoryForm()
         {
            
             InitializeComponent();
             wireUp();
+            
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -24,6 +25,7 @@ namespace FormsApp.Forms
                 Category model = new Category(categoryNameTextBox.Text);
                 SqlData db = new SqlData();
                 db.CreateCategory(model);
+                AddToList(model.CategoryId.ToString(), model.CategoryName);
                 categoryNameTextBox.Text = "";
             }
             else
@@ -50,10 +52,25 @@ namespace FormsApp.Forms
        private void wireUp()
         {
              SqlData db = new SqlData();
-         
-            categoryListBox.DataSource = db.GetCategory();
-            categoryListBox.DisplayMember = "CategoryName";
+            var data=db.GetCategory();
+            for(int i = 0; i < data.Count; i++)
+            {
+
+                AddToList(data[i].CategoryId.ToString(), data[i].CategoryName);
+                listViewCategory.FullRowSelect = true;
+            }
         }
-       
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            SqlData db = new SqlData();
+            db.DeleteCategory(int.Parse(listViewCategory.SelectedItems[0].Text));
+            listViewCategory.Refresh();
+        }
+
+      private void AddToList(string categoryId,string Name)
+        {
+            listViewCategory.Items.Add(new ListViewItem(new string[] { categoryId, Name }));
+        }
     }
 }

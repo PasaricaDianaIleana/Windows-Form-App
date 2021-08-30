@@ -37,8 +37,10 @@ namespace FormsApp.Forms
             this.NameLabel = new System.Windows.Forms.Label();
             this.titleLable = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listViewCategory = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.categoryLabel = new System.Windows.Forms.Label();
-            this.categoryListBox = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +71,7 @@ namespace FormsApp.Forms
             this.deleteButton.TabIndex = 12;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // editButton
             // 
@@ -147,7 +150,7 @@ namespace FormsApp.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel1.Controls.Add(this.categoryListBox);
+            this.panel1.Controls.Add(this.listViewCategory);
             this.panel1.Controls.Add(this.categoryLabel);
             this.panel1.Controls.Add(this.deleteButton);
             this.panel1.Controls.Add(this.editButton);
@@ -160,6 +163,29 @@ namespace FormsApp.Forms
             this.panel1.Size = new System.Drawing.Size(1124, 508);
             this.panel1.TabIndex = 5;
             // 
+            // listViewCategory
+            // 
+            this.listViewCategory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
+            this.columnHeader1});
+            this.listViewCategory.HideSelection = false;
+            this.listViewCategory.Location = new System.Drawing.Point(557, 129);
+            this.listViewCategory.Name = "listViewCategory";
+            this.listViewCategory.Size = new System.Drawing.Size(507, 359);
+            this.listViewCategory.TabIndex = 15;
+            this.listViewCategory.UseCompatibleStateImageBehavior = false;
+            this.listViewCategory.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Category Name";
+            this.columnHeader1.Width = 250;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Category Id";
+            this.columnHeader2.Width = 252;
+            // 
             // categoryLabel
             // 
             this.categoryLabel.AutoSize = true;
@@ -170,15 +196,6 @@ namespace FormsApp.Forms
             this.categoryLabel.Size = new System.Drawing.Size(173, 26);
             this.categoryLabel.TabIndex = 14;
             this.categoryLabel.Text = "Category Form";
-            // 
-            // categoryListBox
-            // 
-            this.categoryListBox.FormattingEnabled = true;
-            this.categoryListBox.ItemHeight = 16;
-            this.categoryListBox.Location = new System.Drawing.Point(544, 116);
-            this.categoryListBox.Name = "categoryListBox";
-            this.categoryListBox.Size = new System.Drawing.Size(504, 372);
-            this.categoryListBox.TabIndex = 15;
             // 
             // CategoryForm
             // 
@@ -208,6 +225,8 @@ namespace FormsApp.Forms
         private System.Windows.Forms.Label titleLable;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label categoryLabel;
-        private System.Windows.Forms.ListBox categoryListBox;
+        private System.Windows.Forms.ListView listViewCategory;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

@@ -25,6 +25,18 @@ namespace DataLibrary.DataAccess
             }
         }
 
+        public void DeleteCategory(int id)
+        {
+         using (IDbConnection connection=
+                new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                var c = new DynamicParameters();
+                c.Add("@Id", id);
+                connection.Execute("dbo.spDeleteCategory", c, commandType: CommandType.StoredProcedure);
+                
+            }
+        }
+
         public List<Category> GetCategory()
         {
             List<Category> output;
