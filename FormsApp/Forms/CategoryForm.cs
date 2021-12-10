@@ -65,7 +65,8 @@ namespace FormsApp.Forms
         {
             SqlData db = new SqlData();
             db.DeleteCategory(int.Parse(listViewCategory.SelectedItems[0].Text));
-            listViewCategory.Refresh();
+            listViewCategory.Items.Clear();
+            wireUp();
         }
 
       private void AddToList(string categoryId,string Name)

@@ -29,6 +29,7 @@ namespace FormsApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.closeButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
@@ -38,8 +39,8 @@ namespace FormsApp.Forms
             this.titleLable = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listViewCategory = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.categoryLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -169,6 +170,8 @@ namespace FormsApp.Forms
             this.columnHeader2,
             this.columnHeader1});
             this.listViewCategory.HideSelection = false;
+            this.listViewCategory.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
             this.listViewCategory.Location = new System.Drawing.Point(557, 129);
             this.listViewCategory.Name = "listViewCategory";
             this.listViewCategory.Size = new System.Drawing.Size(507, 359);
@@ -176,15 +179,15 @@ namespace FormsApp.Forms
             this.listViewCategory.UseCompatibleStateImageBehavior = false;
             this.listViewCategory.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Category Name";
-            this.columnHeader1.Width = 250;
-            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Category Id";
             this.columnHeader2.Width = 252;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Category Name";
+            this.columnHeader1.Width = 250;
             // 
             // categoryLabel
             // 
