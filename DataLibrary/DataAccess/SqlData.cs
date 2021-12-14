@@ -47,5 +47,18 @@ namespace DataLibrary.DataAccess
             }
             return output;
         }
+
+        public void UpdateCategory(Category model)
+        {
+            //dbo.spEditCategory @CategoryName, @CategoryId
+            using (IDbConnection  connection =
+                new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@CategoryName", model.CategoryName);
+                p.Add("@CategoryId", model.CategoryId);
+                connection.Execute("dbo.spEditCategory", p, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }

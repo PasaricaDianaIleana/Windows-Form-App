@@ -73,5 +73,44 @@ namespace FormsApp.Forms
         {
             listViewCategory.Items.Add(new ListViewItem(new string[] { categoryId, Name }));
         }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                if (ValidateForm())
+                {
+                    ListViewItem item = listViewCategory.SelectedItems[0];
+                    var categoryId = int.Parse(item.SubItems[0].Text);
+                    Category category = new Category(categoryNameTextBox.Text);
+                    SqlData db = new SqlData();
+                    db.UpdateCategory(category);
+                    item.SubItems[0].Text = categoryId.ToString();
+                    item.SubItems[1].Text = categoryNameTextBox.Text;
+                    categoryNameTextBox.Text = "";
+                    
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
+        }
+
+        private void listViewCategory_SelectedItem(object sender, EventArgs e)
+        {
+            if (listViewCategory.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                ListViewItem item = listViewCategory.SelectedItems[0];
+                categoryNameTextBox.Text = item.SubItems[1].Text;
+            }
+           }
     }
 }

@@ -87,6 +87,7 @@ namespace FormsApp.Forms
             this.editButton.TabIndex = 11;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // addButton
             // 
@@ -178,6 +179,7 @@ namespace FormsApp.Forms
             this.listViewCategory.TabIndex = 15;
             this.listViewCategory.UseCompatibleStateImageBehavior = false;
             this.listViewCategory.View = System.Windows.Forms.View.Details;
+            this.listViewCategory.Click += new System.EventHandler(this.listViewCategory_SelectedItem);
             // 
             // columnHeader2
             // 

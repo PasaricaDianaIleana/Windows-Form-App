@@ -12,5 +12,7 @@ namespace DataLibrary.DataAccess
         List<Category> GetCategory();
 
         void DeleteCategory(int id);
-    }
+
+        void UpdateCategory(Category model);
+            }
 }

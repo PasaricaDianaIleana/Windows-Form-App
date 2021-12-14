@@ -14,9 +14,14 @@ namespace DataLibrary
         {
 
         }
-        public Category(string categoryName)
+        public Category(string categoryName):this()
         {
             CategoryName = categoryName;
+        }
+        public Category(int id, string categoryName) : this()
+        {
+            CategoryName = categoryName;
+            CategoryId = id;
         }
     }
 }
