@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,7 @@ namespace DataLibrary.DataAccess
         void DeleteCategory(int id);
 
         void UpdateCategory(Category model);
-            }
+
+        Products CreateProduct(Products model);
+      }
 }

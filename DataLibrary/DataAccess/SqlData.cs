@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DataLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,6 +24,11 @@ namespace DataLibrary.DataAccess
                 model.CategoryId = c.Get<int>("@id");
                 return model;
             }
+        }
+
+        public Products CreateProduct(Products model)
+        {
+            throw new NotImplementedException();
         }
 
         public void DeleteCategory(int id)
