@@ -16,3 +16,4 @@ C:\Users\pasar\Desktop\proj\Windows-Form-App\DataLibrary\obj\Debug\netstandard2.
 C:\Users\pasar\Desktop\proj\Windows-Form-App\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.CoreCompileInputs.cache
 C:\Users\pasar\Desktop\proj\Windows-Form-App\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.dll
 C:\Users\pasar\Desktop\proj\Windows-Form-App\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\pasar\Desktop\proj\Windows-Form-App\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.GeneratedMSBuildEditorConfig.editorconfig

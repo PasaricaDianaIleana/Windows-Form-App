@@ -44,6 +44,10 @@ namespace FormsApp.Forms
             Application.Exit();
         }
 
-        
+        private void categoryButton_Click(object sender, EventArgs e)
+        {
+             CategoryForm form= new CategoryForm();
+            form.ShowDialog();
+        }
     }
 }

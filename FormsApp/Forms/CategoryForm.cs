@@ -47,7 +47,7 @@ namespace FormsApp.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+         this.Hide();
         }
        private void wireUp()
         {
