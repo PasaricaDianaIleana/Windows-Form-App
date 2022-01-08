@@ -247,3 +247,4 @@ C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.csproj.
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.exe
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.pdb
 C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\pasar\Desktop\proj\Windows-Form-App\FormsApp\obj\Debug\FormsApp.Forms.SellerForm.resources
