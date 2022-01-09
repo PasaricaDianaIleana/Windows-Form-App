@@ -13,7 +13,14 @@ namespace DataLibrary.Models
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
 
+        public Products(string name, decimal price, int quantity, int categoryId)
+        {
+            ProductName = name;
+            Price = price;
+            Quantity = quantity;
+            CategoryId = categoryId;
+
+        }
     }
 }

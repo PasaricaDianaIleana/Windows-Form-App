@@ -71,7 +71,7 @@ namespace FormsApp.Forms
 
       private void AddToList(string categoryId,string Name)
         {
-            listViewCategory.Items.Add(new ListViewItem(new string[] { categoryId, Name }));
+            listViewCategory.Items.Add(new ListViewItem(new [] { categoryId, Name }));
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -112,5 +112,7 @@ namespace FormsApp.Forms
                 categoryNameTextBox.Text = item.SubItems[1].Text;
             }
            }
+
+        
     }
 }

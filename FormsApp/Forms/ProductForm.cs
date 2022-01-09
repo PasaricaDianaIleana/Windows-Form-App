@@ -1,5 +1,6 @@
 ﻿using DataLibrary;
 using DataLibrary.DataAccess;
+using DataLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace FormsApp.Forms
                 output = false;
             }
             bool priceCheck = decimal.TryParse(priceTextBox.Text, out decimal result);
-            if (priceCheck || result==0)
+            if (!priceCheck || result==0)
             {
                 MessageBox.Show("Price field must be a number");
                 output=false;
@@ -58,7 +59,7 @@ namespace FormsApp.Forms
                 MessageBox.Show("Quantity field field must be a number");
                 output = false;
             }
-            if(categoriesComboBox.SelectedIndex == 0)
+            if(categoriesComboBox.SelectedItem == null)
             {
                 MessageBox.Show("A category must be selected");
                 output = false;
@@ -82,8 +83,22 @@ namespace FormsApp.Forms
         {
             if (CheckData())
             {
-                MessageBox.Show("Data is correct");
+                decimal.TryParse(priceTextBox.Text, out decimal result);
+                int.TryParse(quantityTextBox.Text, out int quantity);
+                int.TryParse(categoriesComboBox.SelectedValue.ToString(), out int id);
+                Products model = new Products(productNameTextBox.Text,result,quantity,id);
+                SqlData db = new SqlData();
+                db.CreateProduct(model);
+                AddProductToList(model.ProductName, model.Price.ToString(), model.Quantity.ToString(), categoriesComboBox.Text);
             }
+            else
+            {
+                MessageBox.Show("Invalid form data");
+            }
+        }
+        private void AddProductToList(string name, string price,string quantity, string categoryName)
+        {
+            new ListViewItem(new string[] { name, price, quantity, categoryName });
         }
     }
 }

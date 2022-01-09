@@ -28,7 +28,19 @@ namespace DataLibrary.DataAccess
 
         public Products CreateProduct(Products model)
         {
-            throw new NotImplementedException();
+            using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                var product= new DynamicParameters();
+                product.Add("@Name", model.ProductName);
+                product.Add("@Price", model.Price);
+                product.Add("@Quantity", model.Quantity);
+                product.Add("@Category", model.CategoryId);
+                product.Add("ProductId",0, DbType.Int32, direction: ParameterDirection.Output);
+                
+                connection.Execute("dbo.InsertProduct_sp", product, commandType:CommandType.StoredProcedure);
+                model.ProductId = product.Get<int>("@ProductId");
+                return model;
+            }
         }
 
         public void DeleteCategory(int id)

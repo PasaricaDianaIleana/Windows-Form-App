@@ -173,9 +173,9 @@ namespace FormsApp.Forms
             this.listViewCategory.HideSelection = false;
             this.listViewCategory.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listViewCategory.Location = new System.Drawing.Point(557, 129);
+            this.listViewCategory.Location = new System.Drawing.Point(488, 88);
             this.listViewCategory.Name = "listViewCategory";
-            this.listViewCategory.Size = new System.Drawing.Size(507, 359);
+            this.listViewCategory.Size = new System.Drawing.Size(593, 400);
             this.listViewCategory.TabIndex = 15;
             this.listViewCategory.UseCompatibleStateImageBehavior = false;
             this.listViewCategory.View = System.Windows.Forms.View.Details;
@@ -184,7 +184,7 @@ namespace FormsApp.Forms
             // columnHeader2
             // 
             this.columnHeader2.Text = "Category Id";
-            this.columnHeader2.Width = 252;
+            this.columnHeader2.Width = 329;
             // 
             // columnHeader1
             // 

@@ -29,13 +29,11 @@ namespace FormsApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.productsListView = new System.Windows.Forms.ListView();
+            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
-            this.orderProductsComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.productGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -52,16 +50,16 @@ namespace FormsApp.Forms
             this.categoryButton = new System.Windows.Forms.Button();
             this.sellingButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel1.Controls.Add(this.productsListView);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.orderProductsComboBox);
-            this.panel1.Controls.Add(this.productGridView);
             this.panel1.Controls.Add(this.deleteButton);
             this.panel1.Controls.Add(this.editButton);
             this.panel1.Controls.Add(this.addButton);
@@ -79,6 +77,31 @@ namespace FormsApp.Forms
             this.panel1.Size = new System.Drawing.Size(1026, 508);
             this.panel1.TabIndex = 0;
             // 
+            // productsListView
+            // 
+            this.productsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Name,
+            this.Price,
+            this.quantity,
+            this.Category});
+            this.productsListView.HideSelection = false;
+            this.productsListView.Location = new System.Drawing.Point(429, 114);
+            this.productsListView.Name = "productsListView";
+            this.productsListView.Size = new System.Drawing.Size(577, 391);
+            this.productsListView.TabIndex = 16;
+            this.productsListView.UseCompatibleStateImageBehavior = false;
+            this.productsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // Name
+            // 
+            this.Name.Text = "Product";
+            this.Name.Width = 132;
+            // 
+            // Price
+            // 
+            this.Price.Text = "Price";
+            this.Price.Width = 169;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -92,83 +115,6 @@ namespace FormsApp.Forms
             this.button1.TabIndex = 15;
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // orderProductsComboBox
-            // 
-            this.orderProductsComboBox.BackColor = System.Drawing.Color.Black;
-            this.orderProductsComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.orderProductsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.orderProductsComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.orderProductsComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.orderProductsComboBox.FocusedState.Parent = this.orderProductsComboBox;
-            this.orderProductsComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.orderProductsComboBox.ForeColor = System.Drawing.Color.Black;
-            this.orderProductsComboBox.HoverState.Parent = this.orderProductsComboBox;
-            this.orderProductsComboBox.ItemHeight = 30;
-            this.orderProductsComboBox.ItemsAppearance.Parent = this.orderProductsComboBox;
-            this.orderProductsComboBox.Location = new System.Drawing.Point(650, 62);
-            this.orderProductsComboBox.Name = "orderProductsComboBox";
-            this.orderProductsComboBox.ShadowDecoration.Parent = this.orderProductsComboBox;
-            this.orderProductsComboBox.Size = new System.Drawing.Size(172, 36);
-            this.orderProductsComboBox.TabIndex = 14;
-            // 
-            // productGridView
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.productGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.productGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.productGridView.BackgroundColor = System.Drawing.Color.White;
-            this.productGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.productGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.productGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.productGridView.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.productGridView.EnableHeadersVisualStyles = false;
-            this.productGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.productGridView.Location = new System.Drawing.Point(444, 114);
-            this.productGridView.Name = "productGridView";
-            this.productGridView.RowHeadersVisible = false;
-            this.productGridView.RowHeadersWidth = 51;
-            this.productGridView.RowTemplate.Height = 24;
-            this.productGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productGridView.Size = new System.Drawing.Size(563, 374);
-            this.productGridView.TabIndex = 13;
-            this.productGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.productGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.productGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.productGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.productGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.productGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.productGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.productGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.productGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.productGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.productGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.productGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.productGridView.ThemeStyle.HeaderStyle.Height = 4;
-            this.productGridView.ThemeStyle.ReadOnly = false;
-            this.productGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.productGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.productGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.productGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.productGridView.ThemeStyle.RowsStyle.Height = 24;
-            this.productGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.productGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // deleteButton
             // 
@@ -410,6 +356,16 @@ namespace FormsApp.Forms
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // quantity
+            // 
+            this.quantity.Text = "Quantity";
+            this.quantity.Width = 111;
+            // 
+            // Category
+            // 
+            this.Category.Text = "Category";
+            this.Category.Width = 159;
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,12 +377,10 @@ namespace FormsApp.Forms
             this.Controls.Add(this.sellerButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,8 +404,11 @@ namespace FormsApp.Forms
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;
-        private Guna.UI2.WinForms.Guna2DataGridView productGridView;
         private System.Windows.Forms.Button button1;
-        private Guna.UI2.WinForms.Guna2ComboBox orderProductsComboBox;
+        private System.Windows.Forms.ListView productsListView;
+        private System.Windows.Forms.ColumnHeader Name;
+        private System.Windows.Forms.ColumnHeader Price;
+        private System.Windows.Forms.ColumnHeader quantity;
+        private System.Windows.Forms.ColumnHeader Category;
     }
 }
