@@ -19,14 +19,8 @@ namespace FormsApp.Forms
         public ProductForm()
         {
             InitializeComponent();
-            LoadListData();
+            WireUpForm();
             WireUpList();
-        }
-
-        private void LoadListData()
-        {
-            SqlData db = new SqlData();
-            availableCategories = db.GetCategory();
         }
         private void WireUpList()
         {
@@ -34,6 +28,16 @@ namespace FormsApp.Forms
             categoriesComboBox.DisplayMember = "CategoryName";
             categoriesComboBox.ValueMember = "CategoryId";
 
+        }
+        private void WireUpForm()
+        {
+            SqlData db = new SqlData();
+            var data = db.GetProducs();
+            foreach(var product in data)
+            {
+                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryId.ToString());
+                productsListView.FullRowSelect = true;
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -89,7 +93,7 @@ namespace FormsApp.Forms
                 Products model = new Products(productNameTextBox.Text,result,quantity,id);
                 SqlData db = new SqlData();
                 db.CreateProduct(model);
-                AddProductToList(model.ProductName, model.Price.ToString(), model.Quantity.ToString(), categoriesComboBox.Text);
+                AddProductToList(model.ProdName, model.Price.ToString(), model.ProdQTY.ToString(), categoriesComboBox.Text);
             }
             else
             {
@@ -98,7 +102,8 @@ namespace FormsApp.Forms
         }
         private void AddProductToList(string name, string price,string quantity, string categoryName)
         {
-            new ListViewItem(new string[] { name, price, quantity, categoryName });
+            //new ListViewItem(new string[] { name, price, quantity, categoryName });
+            productsListView.Items.Add(new ListViewItem(new[] { name, price, quantity, categoryName }));
         }
     }
 }

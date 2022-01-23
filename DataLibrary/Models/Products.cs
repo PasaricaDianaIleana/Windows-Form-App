@@ -9,17 +9,22 @@ namespace DataLibrary.Models
   public  class Products
     {
         public int ProductId { get; set; }
-        public string ProductName { get; set; }
+      
+        public string ProdName { get; set; }
         public decimal Price { get; set; }
-        public int Quantity { get; set; }
+        public int ProdQTY { get; set; }
         public int CategoryId { get; set; }
 
-        public Products(string name, decimal price, int quantity, int categoryId)
+        public Products(string name, decimal price, int quantity, int categoryId) : this()
         {
-            ProductName = name;
+            ProdName = name;
             Price = price;
-            Quantity = quantity;
+            ProdQTY = quantity;
             CategoryId = categoryId;
+
+        }
+        public Products()
+        {
 
         }
     }

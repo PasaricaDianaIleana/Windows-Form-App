@@ -31,9 +31,9 @@ namespace DataLibrary.DataAccess
             using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
             {
                 var product= new DynamicParameters();
-                product.Add("@Name", model.ProductName);
+                product.Add("@Name", model.ProdName);
                 product.Add("@Price", model.Price);
-                product.Add("@Quantity", model.Quantity);
+                product.Add("@Quantity", model.ProdQTY);
                 product.Add("@Category", model.CategoryId);
                 product.Add("ProductId",0, DbType.Int32, direction: ParameterDirection.Output);
                 
@@ -65,7 +65,15 @@ namespace DataLibrary.DataAccess
             }
             return output;
         }
-
+        public List<Products> GetProducs()
+        {
+            List<Products> output;
+            using (IDbConnection connection= new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                output = connection.Query<Products>("dbo.spGetProducts").ToList();
+            }
+            return output;
+        } 
         public void UpdateCategory(Category model)
         {
             //dbo.spEditCategory @CategoryName, @CategoryId

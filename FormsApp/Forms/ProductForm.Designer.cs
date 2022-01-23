@@ -29,6 +29,7 @@ namespace FormsApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.panel1 = new System.Windows.Forms.Panel();
             this.productsListView = new System.Windows.Forms.ListView();
             this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -85,6 +86,8 @@ namespace FormsApp.Forms
             this.quantity,
             this.Category});
             this.productsListView.HideSelection = false;
+            this.productsListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
             this.productsListView.Location = new System.Drawing.Point(429, 114);
             this.productsListView.Name = "productsListView";
             this.productsListView.Size = new System.Drawing.Size(577, 391);
