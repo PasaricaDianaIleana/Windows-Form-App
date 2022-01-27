@@ -34,6 +34,8 @@ namespace FormsApp.Forms
             this.productsListView = new System.Windows.Forms.ListView();
             this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@ namespace FormsApp.Forms
             this.categoryButton = new System.Windows.Forms.Button();
             this.sellingButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +94,7 @@ namespace FormsApp.Forms
             this.productsListView.TabIndex = 16;
             this.productsListView.UseCompatibleStateImageBehavior = false;
             this.productsListView.View = System.Windows.Forms.View.Details;
+            this.productsListView.Click += new System.EventHandler(this.productsListView_SelectedItem);
             // 
             // Name
             // 
@@ -104,6 +105,16 @@ namespace FormsApp.Forms
             // 
             this.Price.Text = "Price";
             this.Price.Width = 169;
+            // 
+            // quantity
+            // 
+            this.quantity.Text = "Quantity";
+            this.quantity.Width = 111;
+            // 
+            // Category
+            // 
+            this.Category.Text = "Category";
+            this.Category.Width = 159;
             // 
             // button1
             // 
@@ -359,16 +370,6 @@ namespace FormsApp.Forms
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // quantity
-            // 
-            this.quantity.Text = "Quantity";
-            this.quantity.Width = 111;
-            // 
-            // Category
-            // 
-            this.Category.Text = "Category";
-            this.Category.Width = 159;
-            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -380,6 +381,7 @@ namespace FormsApp.Forms
             this.Controls.Add(this.sellerButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductForm";
             this.panel1.ResumeLayout(false);

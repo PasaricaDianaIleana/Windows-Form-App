@@ -19,14 +19,16 @@ namespace FormsApp.Forms
         public ProductForm()
         {
             InitializeComponent();
-            WireUpForm();
             WireUpList();
+            WireUpForm();
         }
         private void WireUpList()
         {
+            SqlData db = new SqlData();
+            availableCategories = db.GetCategory();
             categoriesComboBox.DataSource = availableCategories;
             categoriesComboBox.DisplayMember = "CategoryName";
-            categoriesComboBox.ValueMember = "CategoryId";
+            //categoriesComboBox.ValueMember = "CategoryId";
 
         }
         private void WireUpForm()
@@ -35,7 +37,7 @@ namespace FormsApp.Forms
             var data = db.GetProducs();
             foreach(var product in data)
             {
-                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryId.ToString());
+                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryName);
                 productsListView.FullRowSelect = true;
             }
         }
@@ -104,6 +106,32 @@ namespace FormsApp.Forms
         {
             //new ListViewItem(new string[] { name, price, quantity, categoryName });
             productsListView.Items.Add(new ListViewItem(new[] { name, price, quantity, categoryName }));
+        }
+
+        private void productsListView_SelectedItem(object sender, EventArgs e)
+        {
+            if (productsListView.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    ListViewItem item = productsListView.SelectedItems[0];
+                    productNameTextBox.Text = item.SubItems[0].Text;
+                    priceTextBox.Text = item.SubItems[1].Text;
+                    quantityTextBox.Text = item.SubItems[2].Text;
+                    categoriesComboBox.Text = item.SubItems[3].Text;
+                   
+
+                    
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
         }
     }
 }

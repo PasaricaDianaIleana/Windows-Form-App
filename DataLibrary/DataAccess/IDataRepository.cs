@@ -17,5 +17,7 @@ namespace DataLibrary.DataAccess
         void UpdateCategory(Category model);
 
         Products CreateProduct(Products model);
+
+        void DeleteProduct(int id);
       }
 }

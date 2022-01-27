@@ -112,7 +112,5 @@ namespace FormsApp.Forms
                 categoryNameTextBox.Text = item.SubItems[1].Text;
             }
            }
-
-        
     }
 }
