@@ -38,7 +38,7 @@ namespace DataLibrary.DataAccess
                 product.Add("ProductId",0, DbType.Int32, direction: ParameterDirection.Output);
                 
                 connection.Execute("dbo.InsertProduct_sp", product, commandType:CommandType.StoredProcedure);
-                model.ProductId = product.Get<int>("@ProductId");
+                model.ProdId = product.Get<int>("@ProductId");
                 return model;
             }
         }
@@ -52,6 +52,18 @@ namespace DataLibrary.DataAccess
                 c.Add("@Id", id);
                 connection.Execute("dbo.spDeleteCategory", c, commandType: CommandType.StoredProcedure);
                 
+            }
+        }
+
+        public void DeleteProduct(int id)
+        {
+            using (IDbConnection connection =
+                new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                var c = new DynamicParameters();
+                c.Add("@Id", id);
+                connection.Execute("dbo.spDeleteProduct", c, commandType: CommandType.StoredProcedure);
+
             }
         }
 

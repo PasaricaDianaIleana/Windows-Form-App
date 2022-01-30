@@ -28,7 +28,8 @@ namespace FormsApp.Forms
             availableCategories = db.GetCategory();
             categoriesComboBox.DataSource = availableCategories;
             categoriesComboBox.DisplayMember = "CategoryName";
-            //categoriesComboBox.ValueMember = "CategoryId";
+            productsListView.Columns[4].Width = 0;
+            categoriesComboBox.ValueMember = "CategoryId";
 
         }
         private void WireUpForm()
@@ -37,14 +38,11 @@ namespace FormsApp.Forms
             var data = db.GetProducs();
             foreach(var product in data)
             {
-                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryName);
+                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryName, product.ProdId.ToString());
                 productsListView.FullRowSelect = true;
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
         private bool CheckData()
         {
             bool output = true;
@@ -95,17 +93,19 @@ namespace FormsApp.Forms
                 Products model = new Products(productNameTextBox.Text,result,quantity,id);
                 SqlData db = new SqlData();
                 db.CreateProduct(model);
-                AddProductToList(model.ProdName, model.Price.ToString(), model.ProdQTY.ToString(), categoriesComboBox.Text);
+                clearTextBox();
+                AddProductToList(model.ProdName, model.Price.ToString(), model.ProdQTY.ToString(), categoriesComboBox.Text, model.ProdId.ToString());
+                
             }
             else
             {
                 MessageBox.Show("Invalid form data");
             }
         }
-        private void AddProductToList(string name, string price,string quantity, string categoryName)
+        private void AddProductToList(string name, string price,string quantity, string categoryName, string productId)
         {
             //new ListViewItem(new string[] { name, price, quantity, categoryName });
-            productsListView.Items.Add(new ListViewItem(new[] { name, price, quantity, categoryName }));
+            productsListView.Items.Add(new ListViewItem(new[] { name, price, quantity, categoryName, productId }));
         }
 
         private void productsListView_SelectedItem(object sender, EventArgs e)
@@ -132,6 +132,22 @@ namespace FormsApp.Forms
                     throw new Exception(ex.Message);
                 }
             }
+        }
+        private void clearTextBox()
+        {
+            productNameTextBox.Text = "";
+            priceTextBox.Text = "";
+            quantityTextBox.Text = "";
+            categoriesComboBox.Text = "";
+        }
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            SqlData db = new SqlData();
+            ListViewItem item = productsListView.SelectedItems[0];
+            db.DeleteProduct(int.Parse(item.SubItems[4].Text));
+            productsListView.Items.Clear();
+            clearTextBox();
+            WireUpForm();
         }
     }
 }

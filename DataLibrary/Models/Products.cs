@@ -8,7 +8,7 @@ namespace DataLibrary.Models
 {
   public  class Products
     {
-        public int ProductId { get; set; }
+        public int ProdId { get; set; }
       
         public string ProdName { get; set; }
         public decimal Price { get; set; }
