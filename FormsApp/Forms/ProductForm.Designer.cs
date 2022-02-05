@@ -164,6 +164,7 @@ namespace FormsApp.Forms
             this.editButton.TabIndex = 11;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // addButton
             // 
@@ -388,7 +389,7 @@ namespace FormsApp.Forms
             this.Controls.Add(this.sellerButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.Name = "ProductForm";
+           // this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductForm2";
             this.panel1.ResumeLayout(false);

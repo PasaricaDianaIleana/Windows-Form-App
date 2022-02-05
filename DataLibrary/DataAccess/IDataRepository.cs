@@ -14,10 +14,12 @@ namespace DataLibrary.DataAccess
 
         void DeleteCategory(int id);
 
-        void UpdateCategory(Category model);
+        void UpdateCategory(Category model, int categoryId);
 
         Products CreateProduct(Products model);
 
         void DeleteProduct(int id);
+
+        void UpdateProduct(Products model, int productId);
       }
 }

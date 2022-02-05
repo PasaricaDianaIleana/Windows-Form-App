@@ -83,13 +83,13 @@ namespace FormsApp.Forms
                 {
                     ListViewItem item = listViewCategory.SelectedItems[0];
                     var categoryId = int.Parse(item.SubItems[0].Text);
-                    Category category = new Category(categoryNameTextBox.Text);
+                    Category category = new Category(categoryId,categoryNameTextBox.Text);
                     SqlData db = new SqlData();
-                    db.UpdateCategory(category);
-                    item.SubItems[0].Text = categoryId.ToString();
-                    item.SubItems[1].Text = categoryNameTextBox.Text;
+                    db.UpdateCategory(category, categoryId);
                     categoryNameTextBox.Text = "";
-                    
+                    listViewCategory.Items.Clear();
+                    wireUp();
+
                 }
             }
             catch(Exception ex)

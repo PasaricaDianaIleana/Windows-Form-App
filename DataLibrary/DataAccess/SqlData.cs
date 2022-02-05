@@ -3,6 +3,7 @@ using DataLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,7 +87,7 @@ namespace DataLibrary.DataAccess
             }
             return output;
         } 
-        public void UpdateCategory(Category model)
+        public void UpdateCategory(Category model, int categoryId)
         {
             //dbo.spEditCategory @CategoryName, @CategoryId
             using (IDbConnection  connection =
@@ -96,6 +97,23 @@ namespace DataLibrary.DataAccess
                 p.Add("@CategoryName", model.CategoryName);
                 p.Add("@CategoryId", model.CategoryId);
                 connection.Execute("dbo.spEditCategory", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void UpdateProduct(Products model, int productdId)
+        {
+            using (IDbConnection connection= new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                //dbo.spUpdateProduct
+                // @ProductId int
+                var p = new DynamicParameters();
+                p.Add("@ProductName", model.ProdName);
+                p.Add("@Price", model.Price);
+                p.Add("@Quantity", model.ProdQTY);
+                p.Add("@CategoryId", model.CategoryId);
+                p.Add("ProductId", model.ProdId);
+                p.Add("@ProductName", model.ProdName);
+                connection.Execute("dbo.spUpdateProduct", p, commandType: CommandType.StoredProcedure);
             }
         }
     }

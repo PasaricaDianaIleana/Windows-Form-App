@@ -27,5 +27,14 @@ namespace DataLibrary.Models
         {
 
         }
+        public Products(string name, decimal price, int quantity, int categoryId, int productId) : this()
+        {
+            ProdName = name;
+            Price = price;
+            ProdQTY = quantity;
+            CategoryId = categoryId;
+            ProdId = productId;
+
+        }
     }
 }

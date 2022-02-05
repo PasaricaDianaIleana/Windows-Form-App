@@ -32,7 +32,7 @@ namespace FormsApp.Forms
             categoriesComboBox.ValueMember = "CategoryId";
 
         }
-        private void WireUpForm()
+        private List<Products> WireUpForm()
         {
             SqlData db = new SqlData();
             var data = db.GetProducs();
@@ -41,6 +41,7 @@ namespace FormsApp.Forms
                 AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryName, product.ProdId.ToString());
                 productsListView.FullRowSelect = true;
             }
+            return data;
         }
       
         private bool CheckData()
@@ -148,6 +149,31 @@ namespace FormsApp.Forms
             productsListView.Items.Clear();
             clearTextBox();
             WireUpForm();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                if (CheckData())
+                {
+                    ListViewItem item = productsListView.SelectedItems[0];
+                 
+                    SqlData db = new SqlData();
+                    Products products = new Products(productNameTextBox.Text, Decimal.Parse(priceTextBox.Text), Int32.Parse(quantityTextBox.Text), Int32.Parse(categoriesComboBox.SelectedValue.ToString()), Int32.Parse(item.SubItems[4].Text));
+                    db.UpdateProduct(products, int.Parse(item.SubItems[4].Text));
+                    clearTextBox();
+                    productsListView.Items.Clear();
+                   
+                    WireUpForm();
+                    
+                }
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
