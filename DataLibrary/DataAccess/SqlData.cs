@@ -86,7 +86,18 @@ namespace DataLibrary.DataAccess
                 output = connection.Query<Products>("dbo.spGetProducts").ToList();
             }
             return output;
-        } 
+        }
+
+        public int Login(Login login)
+        {
+            var result=0;
+            using (IDbConnection connection= new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                result = connection.Execute("dbo.GetUsers_sp", commandType:CommandType.StoredProcedure);
+            }
+            return result;
+        }
+
         public void UpdateCategory(Category model, int categoryId)
         {
             //dbo.spEditCategory @CategoryName, @CategoryId

@@ -33,10 +33,10 @@ namespace FormsApp
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.userNameTxtBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.loginLabel1 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.passwordTxtInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.userNameLabel1 = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.loginButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.registerLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -97,28 +97,28 @@ namespace FormsApp
             this.loginLabel1.TabIndex = 3;
             this.loginLabel1.Text = "LOGIN";
             // 
-            // guna2TextBox1
+            // passwordTxtInput
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(472, 227);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(258, 32);
-            this.guna2TextBox1.TabIndex = 4;
+            this.passwordTxtInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordTxtInput.DefaultText = "";
+            this.passwordTxtInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.passwordTxtInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.passwordTxtInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordTxtInput.DisabledState.Parent = this.passwordTxtInput;
+            this.passwordTxtInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordTxtInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordTxtInput.FocusedState.Parent = this.passwordTxtInput;
+            this.passwordTxtInput.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.passwordTxtInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordTxtInput.HoverState.Parent = this.passwordTxtInput;
+            this.passwordTxtInput.Location = new System.Drawing.Point(472, 227);
+            this.passwordTxtInput.Name = "passwordTxtInput";
+            this.passwordTxtInput.PasswordChar = '\0';
+            this.passwordTxtInput.PlaceholderText = "";
+            this.passwordTxtInput.SelectedText = "";
+            this.passwordTxtInput.ShadowDecoration.Parent = this.passwordTxtInput;
+            this.passwordTxtInput.Size = new System.Drawing.Size(258, 32);
+            this.passwordTxtInput.TabIndex = 4;
             // 
             // userNameLabel1
             // 
@@ -127,7 +127,7 @@ namespace FormsApp
             this.userNameLabel1.ForeColor = System.Drawing.Color.LightCoral;
             this.userNameLabel1.Location = new System.Drawing.Point(305, 157);
             this.userNameLabel1.Name = "userNameLabel1";
-            this.userNameLabel1.Size = new System.Drawing.Size(143, 30);
+            this.userNameLabel1.Size = new System.Drawing.Size(135, 27);
             this.userNameLabel1.TabIndex = 5;
             this.userNameLabel1.Text = "UserName:";
             // 
@@ -138,22 +138,22 @@ namespace FormsApp
             this.passwordLabel.ForeColor = System.Drawing.Color.LightCoral;
             this.passwordLabel.Location = new System.Drawing.Point(305, 227);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(129, 30);
+            this.passwordLabel.Size = new System.Drawing.Size(124, 27);
             this.passwordLabel.TabIndex = 6;
             this.passwordLabel.Text = "Password:";
             // 
-            // comboBox1
+            // roleComboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.roleComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Items.AddRange(new object[] {
             "Admin",
             "Seller"});
-            this.comboBox1.Location = new System.Drawing.Point(514, 98);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 31);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "Select role";
+            this.roleComboBox.Location = new System.Drawing.Point(514, 98);
+            this.roleComboBox.Name = "roleComboBox";
+            this.roleComboBox.Size = new System.Drawing.Size(177, 31);
+            this.roleComboBox.TabIndex = 7;
+            this.roleComboBox.Text = "Select role";
             // 
             // loginButton
             // 
@@ -179,6 +179,7 @@ namespace FormsApp
             this.loginButton.Size = new System.Drawing.Size(238, 48);
             this.loginButton.TabIndex = 8;
             this.loginButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // registerLabel1
             // 
@@ -187,7 +188,7 @@ namespace FormsApp
             this.registerLabel1.LinkColor = System.Drawing.Color.Black;
             this.registerLabel1.Location = new System.Drawing.Point(469, 381);
             this.registerLabel1.Name = "registerLabel1";
-            this.registerLabel1.Size = new System.Drawing.Size(61, 17);
+            this.registerLabel1.Size = new System.Drawing.Size(58, 16);
             this.registerLabel1.TabIndex = 9;
             this.registerLabel1.TabStop = true;
             this.registerLabel1.Text = "Register";
@@ -225,10 +226,10 @@ namespace FormsApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.registerLabel1);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.roleComboBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.userNameLabel1);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.passwordTxtInput);
             this.Controls.Add(this.loginLabel1);
             this.Controls.Add(this.userNameTxtBox);
             this.Controls.Add(this.guna2CircleButton1);
@@ -245,10 +246,10 @@ namespace FormsApp
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2TextBox userNameTxtBox;
         private System.Windows.Forms.Label loginLabel1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox passwordTxtInput;
         private System.Windows.Forms.Label userNameLabel1;
         private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox roleComboBox;
         private Bunifu.Framework.UI.BunifuThinButton2 loginButton;
         private System.Windows.Forms.LinkLabel registerLabel1;
         private System.Windows.Forms.Label label1;

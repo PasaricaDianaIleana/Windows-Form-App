@@ -31,14 +31,14 @@
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.showItemsCheckBox1 = new System.Windows.Forms.CheckBox();
+            this.filterLabel = new System.Windows.Forms.Label();
+            this.filterBox = new System.Windows.Forms.ComboBox();
             this.listViewCategory = new System.Windows.Forms.ListView();
             this.ProductColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.QuantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PriceColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AvailableColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.filterBox = new System.Windows.Forms.ComboBox();
-            this.filterLabel = new System.Windows.Forms.Label();
-            this.showItemsCheckBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,8 +51,37 @@
             this.panel1.Controls.Add(this.listViewCategory);
             this.panel1.Location = new System.Drawing.Point(55, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(975, 426);
+            this.panel1.Size = new System.Drawing.Size(1000, 426);
             this.panel1.TabIndex = 0;
+            // 
+            // showItemsCheckBox1
+            // 
+            this.showItemsCheckBox1.AutoSize = true;
+            this.showItemsCheckBox1.Location = new System.Drawing.Point(658, 18);
+            this.showItemsCheckBox1.Name = "showItemsCheckBox1";
+            this.showItemsCheckBox1.Size = new System.Drawing.Size(169, 20);
+            this.showItemsCheckBox1.TabIndex = 20;
+            this.showItemsCheckBox1.Text = "Display available items";
+            this.showItemsCheckBox1.UseVisualStyleBackColor = true;
+            // 
+            // filterLabel
+            // 
+            this.filterLabel.AutoSize = true;
+            this.filterLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.filterLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.filterLabel.Location = new System.Drawing.Point(369, 15);
+            this.filterLabel.Name = "filterLabel";
+            this.filterLabel.Size = new System.Drawing.Size(54, 23);
+            this.filterLabel.TabIndex = 19;
+            this.filterLabel.Text = "Filter";
+            // 
+            // filterBox
+            // 
+            this.filterBox.FormattingEnabled = true;
+            this.filterBox.Location = new System.Drawing.Point(448, 15);
+            this.filterBox.Name = "filterBox";
+            this.filterBox.Size = new System.Drawing.Size(121, 24);
+            this.filterBox.TabIndex = 17;
             // 
             // listViewCategory
             // 
@@ -91,40 +120,11 @@
             this.AvailableColumn.Text = "Available";
             this.AvailableColumn.Width = 149;
             // 
-            // filterBox
-            // 
-            this.filterBox.FormattingEnabled = true;
-            this.filterBox.Location = new System.Drawing.Point(448, 15);
-            this.filterBox.Name = "filterBox";
-            this.filterBox.Size = new System.Drawing.Size(121, 24);
-            this.filterBox.TabIndex = 17;
-            // 
-            // filterLabel
-            // 
-            this.filterLabel.AutoSize = true;
-            this.filterLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.filterLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.filterLabel.Location = new System.Drawing.Point(369, 15);
-            this.filterLabel.Name = "filterLabel";
-            this.filterLabel.Size = new System.Drawing.Size(54, 23);
-            this.filterLabel.TabIndex = 19;
-            this.filterLabel.Text = "Filter";
-            // 
-            // showItemsCheckBox1
-            // 
-            this.showItemsCheckBox1.AutoSize = true;
-            this.showItemsCheckBox1.Location = new System.Drawing.Point(658, 18);
-            this.showItemsCheckBox1.Name = "showItemsCheckBox1";
-            this.showItemsCheckBox1.Size = new System.Drawing.Size(169, 20);
-            this.showItemsCheckBox1.TabIndex = 20;
-            this.showItemsCheckBox1.Text = "Display available items";
-            this.showItemsCheckBox1.UseVisualStyleBackColor = true;
-            // 
             // SellerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 548);
+            this.ClientSize = new System.Drawing.Size(1118, 548);
             this.Controls.Add(this.panel1);
             this.Name = "SellerForm";
             this.Text = "SellerForm";
