@@ -93,7 +93,11 @@ namespace DataLibrary.DataAccess
             var result=0;
             using (IDbConnection connection= new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
             {
-                result = connection.Execute("dbo.GetUsers_sp", commandType:CommandType.StoredProcedure);
+                var p = new DynamicParameters();
+                p.Add("@UserName", login.UserName);
+                p.Add("@PassWord",login.Password);
+                p.Add("@Role", login.UserRole);
+                result = connection.Execute("dbo.GetUsers_sp",p, commandType:CommandType.StoredProcedure);
             }
             return result;
         }

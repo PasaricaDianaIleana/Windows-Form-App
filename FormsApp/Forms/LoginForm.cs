@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DataLibrary.DataAccess;
+using DataLibrary.Models;
+using FormsApp.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +15,23 @@ namespace FormsApp
 {
     public partial class LoginForm : Form
     {
+        enum Role
+        {
+            Admin,
+            Seller,
+            User
+        }
+     
         public LoginForm()
         {
             InitializeComponent();
+            WireUpComboBox();
         }
+        public void WireUpComboBox()
+        {
+          roleComboBox.DataSource = Enum.GetValues(typeof(Role)); 
 
+        }
         private void exitLabel_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -24,7 +39,30 @@ namespace FormsApp
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-
+            if (CheckUser())
+            {
+                try
+                {
+                    SqlData db = new SqlData();
+                    Login model = new Login(userNameTxtBox.Text, passwordTxtInput.Text, roleComboBox.SelectedValue.ToString());
+                    var result=db.Login(model);
+                    if (result == 1)
+                    {
+                        ProductForm form = new ProductForm();
+                        form.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("UserName or password is wrong");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    throw ex;
+                 
+                }
+            }
         }
         private bool CheckUser()
         {

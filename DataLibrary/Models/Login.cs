@@ -13,5 +13,18 @@ namespace DataLibrary.Models
         public string Password { get; set; }
 
         public string UserRole { get; set; }
+
+
+        public Login()
+        {
+
+        }
+        public Login(string Username,string password, string role) : this() 
+        {
+            UserName=Username;
+            Password = password;
+            UserRole=role;
+
+        }
     }
 }
