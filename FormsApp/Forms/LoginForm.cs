@@ -84,5 +84,10 @@ namespace FormsApp
             }
             return result;
         }
+
+        private void registerLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

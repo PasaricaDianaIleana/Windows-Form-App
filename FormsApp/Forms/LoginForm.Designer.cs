@@ -192,6 +192,7 @@ namespace FormsApp
             this.registerLabel1.TabIndex = 9;
             this.registerLabel1.TabStop = true;
             this.registerLabel1.Text = "Register";
+            this.registerLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registerLabel1_LinkClicked);
             // 
             // label1
             // 
