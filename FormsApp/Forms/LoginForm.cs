@@ -44,12 +44,18 @@ namespace FormsApp
                 try
                 {
                     SqlData db = new SqlData();
-                    Login model = new Login(userNameTxtBox.Text, passwordTxtInput.Text, roleComboBox.SelectedValue.ToString());
+                    string userRole = roleComboBox.SelectedValue.ToString();
+                    Login model = new Login(userNameTxtBox.Text, passwordTxtInput.Text, userRole);
                     var result=db.Login(model);
-                    if (result == 1)
+                    if (result == 1 && userRole == "Admin")
                     {
                         ProductForm form = new ProductForm();
                         form.ShowDialog();
+                    }
+                    else if(result == 1 && userRole == "User")
+                    {
+                        SellerForm form= new SellerForm();
+                        form.Show();
                     }
                     else
                     {
@@ -87,7 +93,8 @@ namespace FormsApp
 
         private void registerLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            RegisterForm form = new RegisterForm();
+            form.Show();
         }
     }
 }

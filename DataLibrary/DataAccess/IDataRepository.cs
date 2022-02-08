@@ -19,6 +19,7 @@ namespace DataLibrary.DataAccess
         int Login(Login login);
         Products CreateProduct(Products model);
 
+        Register AddUser(Register model);
         void DeleteProduct(int id);
 
         void UpdateProduct(Products model, int productId);

@@ -12,6 +12,22 @@ namespace DataLibrary.DataAccess
 {
     public class SqlData : IDataRepository
     {
+        public Register AddUser(Register model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                 var p = new DynamicParameters();
+                p.Add("@UserName", model.UserName);
+                p.Add("@Email", model.Email);
+                p.Add("@PhoneNumber", model.PhoneNumber);
+                p.Add("@City", model.City);
+                p.Add("UserId",0, dbType:DbType.Int32, direction:ParameterDirection.Output);
+
+                connection.Execute("dbo.spAddUser", p, commandType: CommandType.StoredProcedure);
+                model.UserId = p.Get<int>("@UserId");
+                return model;
+            }
+      }
         public Category CreateCategory(Category model)
         {
             using (IDbConnection connection = 
