@@ -113,7 +113,11 @@ namespace DataLibrary.DataAccess
                 p.Add("@UserName", login.UserName);
                 p.Add("@PassWord",login.Password);
                 p.Add("@Role", login.UserRole);
-                result = connection.Execute("dbo.GetUsers_sp",p, commandType:CommandType.StoredProcedure);
+                p.Add("@Exists", DbType.Int32,direction: ParameterDirection.Output);
+               
+                connection.Execute("dbo.GetUsers_sp",p, commandType:CommandType.StoredProcedure);
+
+                result = p.Get<int>("@Exists");
             }
             return result;
         }
