@@ -44,6 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.phoneLbl = new System.Windows.Forms.Label();
             this.phoneTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // guna2CircleButton1
@@ -238,6 +240,7 @@
             this.regsiterButton.Size = new System.Drawing.Size(238, 48);
             this.regsiterButton.TabIndex = 22;
             this.regsiterButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.regsiterButton.Click += new System.EventHandler(this.regsiterButton_Click);
             // 
             // loginLabel1
             // 
@@ -296,11 +299,37 @@
             this.phoneTextBox.Size = new System.Drawing.Size(258, 32);
             this.phoneTextBox.TabIndex = 26;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.LightCoral;
+            this.label2.Location = new System.Drawing.Point(23, 346);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 27);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Role:";
+            // 
+            // roleComboBox
+            // 
+            this.roleComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Items.AddRange(new object[] {
+            "Admin",
+            "Seller"});
+            this.roleComboBox.Location = new System.Drawing.Point(170, 339);
+            this.roleComboBox.Name = "roleComboBox";
+            this.roleComboBox.Size = new System.Drawing.Size(177, 31);
+            this.roleComboBox.TabIndex = 28;
+            this.roleComboBox.Text = "Select role";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 481);
+            this.Controls.Add(this.roleComboBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.phoneTextBox);
             this.Controls.Add(this.phoneLbl);
             this.Controls.Add(this.label1);
@@ -340,5 +369,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label phoneLbl;
         private Guna.UI2.WinForms.Guna2TextBox phoneTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox roleComboBox;
     }
 }

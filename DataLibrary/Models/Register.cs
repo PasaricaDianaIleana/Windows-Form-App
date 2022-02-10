@@ -14,7 +14,23 @@ namespace DataLibrary.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
+        public string Role { get; set; }
         public string City { get; set; }
 
+
+        public Register(string name, string password, string email, string number, string city, string role)
+        {
+            UserName = name;
+            Password = password;
+            Email = email;
+            PhoneNumber = number;
+            City = city;
+            Role = role;
+        } 
+
+        public Register()
+        {
+
+        }
     }
 }

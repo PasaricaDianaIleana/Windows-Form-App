@@ -18,13 +18,15 @@ namespace DataLibrary.DataAccess
             {
                  var p = new DynamicParameters();
                 p.Add("@UserName", model.UserName);
+                p.Add("@Password", model.Password);
                 p.Add("@Email", model.Email);
                 p.Add("@PhoneNumber", model.PhoneNumber);
                 p.Add("@City", model.City);
+                p.Add("@Role", model.Role);
                 p.Add("UserId",0, dbType:DbType.Int32, direction:ParameterDirection.Output);
-
-                connection.Execute("dbo.spAddUser", p, commandType: CommandType.StoredProcedure);
                 model.UserId = p.Get<int>("@UserId");
+                connection.Execute("dbo.spAddUser", p, commandType: CommandType.StoredProcedure);
+               
                 return model;
             }
       }
