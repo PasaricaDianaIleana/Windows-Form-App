@@ -15,25 +15,29 @@ namespace DataLibrary.Models
         public int ProdQTY { get; set; }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+
+        public bool Available { get; set; }
         public Products(string name, decimal price, int quantity, int categoryId) : this()
         {
             ProdName = name;
             Price = price;
             ProdQTY = quantity;
             CategoryId = categoryId;
+           
 
         }
         public Products()
         {
 
         }
-        public Products(string name, decimal price, int quantity, int categoryId, int productId) : this()
+        public Products(string name, decimal price, int quantity, int categoryId, int productId, bool available) : this()
         {
             ProdName = name;
             Price = price;
             ProdQTY = quantity;
             CategoryId = categoryId;
             ProdId = productId;
+            Available = available;
 
         }
     }

@@ -15,12 +15,22 @@ namespace FormsApp.Forms
 {
     public partial class ProductForm : Form
     {
+        enum AvailableEnum
+        {
+            Available,
+            Unavailable
+        }
         private List<Category> availableCategories = new List<Category>();
         public ProductForm()
         {
             InitializeComponent();
             WireUpList();
             WireUpForm();
+            WireUpComboBox();
+        }
+        private void WireUpComboBox()
+        {
+            availableComboBox1.DataSource= Enum.GetValues(typeof(AvailableEnum));
         }
         private void WireUpList()
         {
@@ -34,11 +44,13 @@ namespace FormsApp.Forms
         }
         private List<Products> WireUpForm()
         {
+            availableLbl.Text = String.Empty ;
+            availableComboBox1.Hide();
             SqlData db = new SqlData();
             var data = db.GetProducs();
             foreach(var product in data)
             {
-                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryName, product.ProdId.ToString());
+                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryName, product.ProdId.ToString(),product.Available.ToString());
                 productsListView.FullRowSelect = true;
             }
             return data;
@@ -95,7 +107,7 @@ namespace FormsApp.Forms
                 SqlData db = new SqlData();
                 db.CreateProduct(model);
                 clearTextBox();
-                AddProductToList(model.ProdName, model.Price.ToString(), model.ProdQTY.ToString(), categoriesComboBox.Text, model.ProdId.ToString());
+                AddProductToList(model.ProdName, model.Price.ToString(), model.ProdQTY.ToString(), categoriesComboBox.Text, model.ProdId.ToString(), "True");
                 
             }
             else
@@ -103,22 +115,25 @@ namespace FormsApp.Forms
                 MessageBox.Show("Invalid form data");
             }
         }
-        private void AddProductToList(string name, string price,string quantity, string categoryName, string productId)
+        private void AddProductToList(string name, string price,string quantity, string categoryName, string productId, string available)
         {
             //new ListViewItem(new string[] { name, price, quantity, categoryName });
-            productsListView.Items.Add(new ListViewItem(new[] { name, price, quantity, categoryName, productId }));
+            productsListView.Items.Add(new ListViewItem(new[] { name, price, quantity, categoryName, productId, available }));
         }
 
         private void productsListView_SelectedItem(object sender, EventArgs e)
         {
             if (productsListView.SelectedItems.Count == 0)
             {
+                availableComboBox1.Hide();
                 return;
             }
             else
             {
+                availableComboBox1.Show();
                 try
                 {
+
                     ListViewItem item = productsListView.SelectedItems[0];
                     productNameTextBox.Text = item.SubItems[0].Text;
                     priceTextBox.Text = item.SubItems[1].Text;
@@ -153,27 +168,37 @@ namespace FormsApp.Forms
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            
-            try
-            {
-                if (CheckData())
+            if (productsListView.SelectedItems.Count > 0) {
+                try
                 {
-                    ListViewItem item = productsListView.SelectedItems[0];
-                 
-                    SqlData db = new SqlData();
-                    Products products = new Products(productNameTextBox.Text, Decimal.Parse(priceTextBox.Text), Int32.Parse(quantityTextBox.Text), Int32.Parse(categoriesComboBox.SelectedValue.ToString()), Int32.Parse(item.SubItems[4].Text));
-                    db.UpdateProduct(products, int.Parse(item.SubItems[4].Text));
-                    clearTextBox();
-                    productsListView.Items.Clear();
-                   
-                    WireUpForm();
-                    
+                    availableComboBox1.Show();
+                    if (CheckData())
+                    {
+                        ListViewItem item = productsListView.SelectedItems[0];
+                        bool availableProduct = false;
+                        if (availableComboBox1.SelectedValue.ToString() == "Available")
+                        {
+                            availableProduct = true;
+                        }
+                            SqlData db = new SqlData();
+                            Products products = new Products(productNameTextBox.Text, Decimal.Parse(priceTextBox.Text), Int32.Parse(quantityTextBox.Text), Int32.Parse(categoriesComboBox.SelectedValue.ToString()), Int32.Parse(item.SubItems[4].Text), availableProduct);
+                            db.UpdateProduct(products, int.Parse(item.SubItems[4].Text));
+                            clearTextBox();
+                            productsListView.Items.Clear();
+
+                            WireUpForm();
+
+                        }
+                    }
+               
+                   catch (Exception ex) {
+
+                        MessageBox.Show(ex.Message);
+                      }   
                 }
-            } 
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+             else {
+                    availableComboBox1.Hide();
+                }
+}
     }
 }

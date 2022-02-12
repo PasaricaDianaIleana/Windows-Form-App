@@ -31,12 +31,15 @@ namespace FormsApp.Forms
         {
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.panel1 = new System.Windows.Forms.Panel();
+            this.availableLbl = new System.Windows.Forms.Label();
+            this.availableComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.productsListView = new System.Windows.Forms.ListView();
             this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.productId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Available = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
@@ -60,6 +63,8 @@ namespace FormsApp.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel1.Controls.Add(this.availableLbl);
+            this.panel1.Controls.Add(this.availableComboBox1);
             this.panel1.Controls.Add(this.productsListView);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.deleteButton);
@@ -76,8 +81,38 @@ namespace FormsApp.Forms
             this.panel1.Controls.Add(this.titleLable);
             this.panel1.Location = new System.Drawing.Point(153, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1198, 508);
+            this.panel1.Size = new System.Drawing.Size(1277, 508);
             this.panel1.TabIndex = 0;
+            // 
+            // availableLbl
+            // 
+            this.availableLbl.AutoSize = true;
+            this.availableLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.availableLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.availableLbl.Location = new System.Drawing.Point(13, 386);
+            this.availableLbl.Name = "availableLbl";
+            this.availableLbl.Size = new System.Drawing.Size(111, 23);
+            this.availableLbl.TabIndex = 18;
+            this.availableLbl.Text = "Available:";
+            // 
+            // availableComboBox1
+            // 
+            this.availableComboBox1.BackColor = System.Drawing.Color.Black;
+            this.availableComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.availableComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.availableComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.availableComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.availableComboBox1.FocusedState.Parent = this.availableComboBox1;
+            this.availableComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.availableComboBox1.ForeColor = System.Drawing.Color.Black;
+            this.availableComboBox1.HoverState.Parent = this.availableComboBox1;
+            this.availableComboBox1.ItemHeight = 30;
+            this.availableComboBox1.ItemsAppearance.Parent = this.availableComboBox1;
+            this.availableComboBox1.Location = new System.Drawing.Point(145, 373);
+            this.availableComboBox1.Name = "availableComboBox1";
+            this.availableComboBox1.ShadowDecoration.Parent = this.availableComboBox1;
+            this.availableComboBox1.Size = new System.Drawing.Size(262, 36);
+            this.availableComboBox1.TabIndex = 17;
             // 
             // productsListView
             // 
@@ -86,11 +121,12 @@ namespace FormsApp.Forms
             this.Price,
             this.quantity,
             this.Category,
-            this.productId});
+            this.productId,
+            this.Available});
             this.productsListView.HideSelection = false;
             this.productsListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.productsListView.Location = new System.Drawing.Point(448, 101);
+            this.productsListView.Location = new System.Drawing.Point(453, 104);
             this.productsListView.Name = "productsListView";
             this.productsListView.Size = new System.Drawing.Size(721, 391);
             this.productsListView.TabIndex = 16;
@@ -101,12 +137,12 @@ namespace FormsApp.Forms
             // Name
             // 
             this.Name.Text = "Product";
-            this.Name.Width = 132;
+            this.Name.Width = 118;
             // 
             // Price
             // 
             this.Price.Text = "Price";
-            this.Price.Width = 169;
+            this.Price.Width = 102;
             // 
             // quantity
             // 
@@ -116,11 +152,17 @@ namespace FormsApp.Forms
             // Category
             // 
             this.Category.Text = "Category";
-            this.Category.Width = 159;
+            this.Category.Width = 98;
             // 
             // productId
             // 
             this.productId.Text = "ProductId";
+            this.productId.Width = 111;
+            // 
+            // Available
+            // 
+            this.Available.Text = "AvailableHeader";
+            this.Available.Width = 115;
             // 
             // button1
             // 
@@ -129,7 +171,7 @@ namespace FormsApp.Forms
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(845, 62);
+            this.button1.Location = new System.Drawing.Point(851, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 33);
             this.button1.TabIndex = 15;
@@ -143,7 +185,7 @@ namespace FormsApp.Forms
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.deleteButton.ForeColor = System.Drawing.Color.Black;
-            this.deleteButton.Location = new System.Drawing.Point(282, 428);
+            this.deleteButton.Location = new System.Drawing.Point(282, 438);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(97, 34);
             this.deleteButton.TabIndex = 12;
@@ -158,7 +200,7 @@ namespace FormsApp.Forms
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.editButton.ForeColor = System.Drawing.Color.Black;
-            this.editButton.Location = new System.Drawing.Point(145, 428);
+            this.editButton.Location = new System.Drawing.Point(145, 438);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(97, 34);
             this.editButton.TabIndex = 11;
@@ -173,7 +215,7 @@ namespace FormsApp.Forms
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.addButton.ForeColor = System.Drawing.Color.Black;
-            this.addButton.Location = new System.Drawing.Point(17, 428);
+            this.addButton.Location = new System.Drawing.Point(17, 438);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(97, 34);
             this.addButton.TabIndex = 5;
@@ -194,7 +236,7 @@ namespace FormsApp.Forms
             this.categoriesComboBox.HoverState.Parent = this.categoriesComboBox;
             this.categoriesComboBox.ItemHeight = 30;
             this.categoriesComboBox.ItemsAppearance.Parent = this.categoriesComboBox;
-            this.categoriesComboBox.Location = new System.Drawing.Point(117, 328);
+            this.categoriesComboBox.Location = new System.Drawing.Point(141, 300);
             this.categoriesComboBox.Name = "categoriesComboBox";
             this.categoriesComboBox.ShadowDecoration.Parent = this.categoriesComboBox;
             this.categoriesComboBox.Size = new System.Drawing.Size(262, 36);
@@ -205,7 +247,7 @@ namespace FormsApp.Forms
             this.categoryLabel.AutoSize = true;
             this.categoryLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.categoryLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.categoryLabel.Location = new System.Drawing.Point(3, 341);
+            this.categoryLabel.Location = new System.Drawing.Point(6, 313);
             this.categoryLabel.Name = "categoryLabel";
             this.categoryLabel.Size = new System.Drawing.Size(108, 23);
             this.categoryLabel.TabIndex = 9;
@@ -225,7 +267,7 @@ namespace FormsApp.Forms
             this.quantityTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.quantityTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.quantityTextBox.HoverState.Parent = this.quantityTextBox;
-            this.quantityTextBox.Location = new System.Drawing.Point(117, 263);
+            this.quantityTextBox.Location = new System.Drawing.Point(117, 240);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.PasswordChar = '\0';
             this.quantityTextBox.PlaceholderText = "";
@@ -248,7 +290,7 @@ namespace FormsApp.Forms
             this.priceTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.priceTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.priceTextBox.HoverState.Parent = this.priceTextBox;
-            this.priceTextBox.Location = new System.Drawing.Point(117, 193);
+            this.priceTextBox.Location = new System.Drawing.Point(117, 169);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.PasswordChar = '\0';
             this.priceTextBox.PlaceholderText = "";
@@ -262,7 +304,7 @@ namespace FormsApp.Forms
             this.quantityLabel.AutoSize = true;
             this.quantityLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.quantityLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.quantityLabel.Location = new System.Drawing.Point(3, 263);
+            this.quantityLabel.Location = new System.Drawing.Point(13, 240);
             this.quantityLabel.Name = "quantityLabel";
             this.quantityLabel.Size = new System.Drawing.Size(98, 23);
             this.quantityLabel.TabIndex = 6;
@@ -273,7 +315,7 @@ namespace FormsApp.Forms
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.priceLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.priceLabel.Location = new System.Drawing.Point(13, 182);
+            this.priceLabel.Location = new System.Drawing.Point(13, 177);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(62, 23);
             this.priceLabel.TabIndex = 5;
@@ -293,7 +335,7 @@ namespace FormsApp.Forms
             this.productNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.productNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.productNameTextBox.HoverState.Parent = this.productNameTextBox;
-            this.productNameTextBox.Location = new System.Drawing.Point(117, 125);
+            this.productNameTextBox.Location = new System.Drawing.Point(117, 104);
             this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.PasswordChar = '\0';
             this.productNameTextBox.PlaceholderText = "";
@@ -307,7 +349,7 @@ namespace FormsApp.Forms
             this.productNameLabel.AutoSize = true;
             this.productNameLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.productNameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.productNameLabel.Location = new System.Drawing.Point(13, 125);
+            this.productNameLabel.Location = new System.Drawing.Point(13, 112);
             this.productNameLabel.Name = "productNameLabel";
             this.productNameLabel.Size = new System.Drawing.Size(76, 23);
             this.productNameLabel.TabIndex = 3;
@@ -382,14 +424,14 @@ namespace FormsApp.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1383, 558);
+            this.ClientSize = new System.Drawing.Size(1475, 558);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.sellingButton);
             this.Controls.Add(this.categoryButton);
             this.Controls.Add(this.sellerButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-           // this.Name = "ProductForm";
+            //this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductForm2";
             this.panel1.ResumeLayout(false);
@@ -424,5 +466,8 @@ namespace FormsApp.Forms
         private System.Windows.Forms.ColumnHeader quantity;
         private System.Windows.Forms.ColumnHeader Category;
         private System.Windows.Forms.ColumnHeader productId;
+        private System.Windows.Forms.ColumnHeader Available;
+        private System.Windows.Forms.Label availableLbl;
+        private Guna.UI2.WinForms.Guna2ComboBox availableComboBox1;
     }
 }

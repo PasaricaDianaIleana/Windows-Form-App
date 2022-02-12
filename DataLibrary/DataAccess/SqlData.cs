@@ -14,7 +14,7 @@ namespace DataLibrary.DataAccess
     {
         public Register AddUser(Register model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            using (IDbConnection connection = new SqlConnection(Helper.ConnectionStringVal("ShopDB")))
             {
                  var p = new DynamicParameters();
                 p.Add("@UserName", model.UserName);
@@ -24,9 +24,9 @@ namespace DataLibrary.DataAccess
                 p.Add("@City", model.City);
                 p.Add("@Role", model.Role);
                 p.Add("UserId",0, dbType:DbType.Int32, direction:ParameterDirection.Output);
-                model.UserId = p.Get<int>("@UserId");
+                
                 connection.Execute("dbo.spAddUser", p, commandType: CommandType.StoredProcedure);
-               
+                model.UserId = p.Get<int>("@UserId");
                 return model;
             }
       }
@@ -47,13 +47,14 @@ namespace DataLibrary.DataAccess
 
         public Products CreateProduct(Products model)
         {
-            using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            using(IDbConnection connection = new SqlConnection(Helper.ConnectionStringVal("ShopDB")))
             {
                 var product= new DynamicParameters();
                 product.Add("@Name", model.ProdName);
                 product.Add("@Price", model.Price);
                 product.Add("@Quantity", model.ProdQTY);
                 product.Add("@Category", model.CategoryId);
+                product.Add("@Available", model.Available);
                 product.Add("ProductId",0, DbType.Int32, direction: ParameterDirection.Output);
                 
                 connection.Execute("dbo.InsertProduct_sp", product, commandType:CommandType.StoredProcedure);
@@ -99,7 +100,7 @@ namespace DataLibrary.DataAccess
         public List<Products> GetProducs()
         {
             List<Products> output;
-            using (IDbConnection connection= new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            using (IDbConnection connection= new SqlConnection(Helper.ConnectionStringVal("ShopDB")))
             {
                 output = connection.Query<Products>("dbo.spGetProducts").ToList();
             }
@@ -109,7 +110,7 @@ namespace DataLibrary.DataAccess
         public int Login(Login login)
         {
             var result=0;
-            using (IDbConnection connection= new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            using (IDbConnection connection= new SqlConnection(Helper.ConnectionStringVal("ShopDB")))
             {
                 var p = new DynamicParameters();
                 p.Add("@UserName", login.UserName);
@@ -139,7 +140,7 @@ namespace DataLibrary.DataAccess
 
         public void UpdateProduct(Products model, int productdId)
         {
-            using (IDbConnection connection= new System.Data.SqlClient.SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            using (IDbConnection connection= new SqlConnection(Helper.ConnectionStringVal("ShopDB")))
             {
                 //dbo.spUpdateProduct
                 // @ProductId int
@@ -150,6 +151,7 @@ namespace DataLibrary.DataAccess
                 p.Add("@CategoryId", model.CategoryId);
                 p.Add("ProductId", model.ProdId);
                 p.Add("@ProductName", model.ProdName);
+                p.Add("@Available", model.Available.ToString());
                 connection.Execute("dbo.spUpdateProduct", p, commandType: CommandType.StoredProcedure);
             }
         }
