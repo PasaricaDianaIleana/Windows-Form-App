@@ -23,5 +23,7 @@ namespace DataLibrary.DataAccess
         void DeleteProduct(int id);
 
         void UpdateProduct(Products model, int productId);
+
+        List<Products> ApplyFiltere(int id);
       }
 }

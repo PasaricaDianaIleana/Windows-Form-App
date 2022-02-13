@@ -47,10 +47,15 @@ namespace FormsApp.Forms
             availableLbl.Text = String.Empty ;
             availableComboBox1.Hide();
             SqlData db = new SqlData();
+            var productAvailable = "Unavailable";
             var data = db.GetProducs();
             foreach(var product in data)
             {
-                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryName, product.ProdId.ToString(),product.Available.ToString());
+                if (product.Available == true)
+                {
+                    productAvailable = "Available";
+                }
+                AddProductToList(product.ProdName, product.Price.ToString(), product.ProdQTY.ToString(), product.CategoryName, product.ProdId.ToString(), productAvailable);
                 productsListView.FullRowSelect = true;
             }
             return data;
@@ -103,7 +108,7 @@ namespace FormsApp.Forms
                 decimal.TryParse(priceTextBox.Text, out decimal result);
                 int.TryParse(quantityTextBox.Text, out int quantity);
                 int.TryParse(categoriesComboBox.SelectedValue.ToString(), out int id);
-                Products model = new Products(productNameTextBox.Text,result,quantity,id);
+                Products model = new Products(productNameTextBox.Text,result,quantity,id,true);
                 SqlData db = new SqlData();
                 db.CreateProduct(model);
                 clearTextBox();

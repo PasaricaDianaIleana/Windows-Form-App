@@ -17,13 +17,13 @@ namespace DataLibrary.Models
         public string CategoryName { get; set; }
 
         public bool Available { get; set; }
-        public Products(string name, decimal price, int quantity, int categoryId) : this()
+        public Products(string name, decimal price, int quantity, int categoryId, bool available) : this()
         {
             ProdName = name;
             Price = price;
             ProdQTY = quantity;
             CategoryId = categoryId;
-           
+            Available = available;
 
         }
         public Products()

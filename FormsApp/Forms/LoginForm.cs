@@ -52,14 +52,14 @@ namespace FormsApp
                         this.Hide();
                         ProductForm form = new ProductForm();
                         form.ShowDialog();
-                        this.Close();
+                        
                     }
                     else if(result == 1 && userRole == "User")
                     {
                         this.Hide();
                         SellerForm form= new SellerForm();
                         form.Show();
-                        this.Close();
+                        
                     }
                     else
                     {

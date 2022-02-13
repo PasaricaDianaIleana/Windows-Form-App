@@ -63,6 +63,7 @@ namespace FormsApp.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel1.Controls.Add(this.closeButton);
             this.panel1.Controls.Add(this.availableLbl);
             this.panel1.Controls.Add(this.availableComboBox1);
             this.panel1.Controls.Add(this.productsListView);
@@ -128,7 +129,7 @@ namespace FormsApp.Forms
             listViewItem1});
             this.productsListView.Location = new System.Drawing.Point(453, 104);
             this.productsListView.Name = "productsListView";
-            this.productsListView.Size = new System.Drawing.Size(721, 391);
+            this.productsListView.Size = new System.Drawing.Size(773, 391);
             this.productsListView.TabIndex = 16;
             this.productsListView.UseCompatibleStateImageBehavior = false;
             this.productsListView.View = System.Windows.Forms.View.Details;
@@ -162,7 +163,7 @@ namespace FormsApp.Forms
             // Available
             // 
             this.Available.Text = "AvailableHeader";
-            this.Available.Width = 115;
+            this.Available.Width = 130;
             // 
             // button1
             // 
@@ -412,7 +413,7 @@ namespace FormsApp.Forms
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.closeButton.ForeColor = System.Drawing.Color.Black;
-            this.closeButton.Location = new System.Drawing.Point(1357, 3);
+            this.closeButton.Location = new System.Drawing.Point(1252, 3);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(22, 34);
             this.closeButton.TabIndex = 4;
@@ -425,13 +426,12 @@ namespace FormsApp.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1475, 558);
-            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.sellingButton);
             this.Controls.Add(this.categoryButton);
             this.Controls.Add(this.sellerButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.Name = "ProductForm";
+           // this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductForm2";
             this.panel1.ResumeLayout(false);

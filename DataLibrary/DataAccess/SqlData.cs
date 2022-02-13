@@ -30,6 +30,9 @@ namespace DataLibrary.DataAccess
                 return model;
             }
       }
+
+       
+
         public Category CreateCategory(Category model)
         {
             using (IDbConnection connection = 
@@ -106,7 +109,22 @@ namespace DataLibrary.DataAccess
             }
             return output;
         }
+        public List<Products> ApplyFiltere(int id)
+        {
+            List<Products> products;
+            using (IDbConnection connection = new SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                var c = new DynamicParameters();
+                c.Add("@CategoryId", id);
+                products= connection.Query<Products>("dbo.spFilerProducts", new
+                {
+                    CategoryId = id
+                }, commandType: CommandType.StoredProcedure).ToList();
 
+            }
+            return products;
+        }
+    
         public int Login(Login login)
         {
             var result=0;

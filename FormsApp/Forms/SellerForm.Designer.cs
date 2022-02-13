@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.showItemsCheckBox1 = new System.Windows.Forms.CheckBox();
             this.filterLabel = new System.Windows.Forms.Label();
             this.filterBox = new System.Windows.Forms.ComboBox();
-            this.listViewCategory = new System.Windows.Forms.ListView();
+            this.listViewProducts = new System.Windows.Forms.ListView();
             this.ProductColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.QuantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PriceColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AvailableColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,28 +49,29 @@
             this.panel1.Controls.Add(this.showItemsCheckBox1);
             this.panel1.Controls.Add(this.filterLabel);
             this.panel1.Controls.Add(this.filterBox);
-            this.panel1.Controls.Add(this.listViewCategory);
+            this.panel1.Controls.Add(this.listViewProducts);
             this.panel1.Location = new System.Drawing.Point(55, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 426);
+            this.panel1.Size = new System.Drawing.Size(1149, 426);
             this.panel1.TabIndex = 0;
             // 
             // showItemsCheckBox1
             // 
             this.showItemsCheckBox1.AutoSize = true;
-            this.showItemsCheckBox1.Location = new System.Drawing.Point(658, 18);
+            this.showItemsCheckBox1.Location = new System.Drawing.Point(815, 18);
             this.showItemsCheckBox1.Name = "showItemsCheckBox1";
             this.showItemsCheckBox1.Size = new System.Drawing.Size(169, 20);
             this.showItemsCheckBox1.TabIndex = 20;
             this.showItemsCheckBox1.Text = "Display available items";
             this.showItemsCheckBox1.UseVisualStyleBackColor = true;
+            this.showItemsCheckBox1.CheckedChanged += new System.EventHandler(this.showItemsCheckBox1_CheckedChanged);
             // 
             // filterLabel
             // 
             this.filterLabel.AutoSize = true;
             this.filterLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.filterLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.filterLabel.Location = new System.Drawing.Point(369, 15);
+            this.filterLabel.Location = new System.Drawing.Point(504, 18);
             this.filterLabel.Name = "filterLabel";
             this.filterLabel.Size = new System.Drawing.Size(54, 23);
             this.filterLabel.TabIndex = 19;
@@ -78,32 +80,34 @@
             // filterBox
             // 
             this.filterBox.FormattingEnabled = true;
-            this.filterBox.Location = new System.Drawing.Point(448, 15);
+            this.filterBox.Location = new System.Drawing.Point(564, 18);
             this.filterBox.Name = "filterBox";
             this.filterBox.Size = new System.Drawing.Size(121, 24);
             this.filterBox.TabIndex = 17;
+            this.filterBox.SelectedIndexChanged += new System.EventHandler(this.filterBox_SelectedIndexChanged);
             // 
-            // listViewCategory
+            // listViewProducts
             // 
-            this.listViewCategory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ProductColumn,
             this.QuantityColumn,
             this.PriceColumn,
+            this.Category,
             this.AvailableColumn});
-            this.listViewCategory.HideSelection = false;
-            this.listViewCategory.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listViewCategory.Location = new System.Drawing.Point(349, 55);
-            this.listViewCategory.Name = "listViewCategory";
-            this.listViewCategory.Size = new System.Drawing.Size(613, 359);
-            this.listViewCategory.TabIndex = 16;
-            this.listViewCategory.UseCompatibleStateImageBehavior = false;
-            this.listViewCategory.View = System.Windows.Forms.View.Details;
+            this.listViewProducts.HideSelection = false;
+            this.listViewProducts.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem2});
+            this.listViewProducts.Location = new System.Drawing.Point(321, 54);
+            this.listViewProducts.Name = "listViewProducts";
+            this.listViewProducts.Size = new System.Drawing.Size(770, 359);
+            this.listViewProducts.TabIndex = 16;
+            this.listViewProducts.UseCompatibleStateImageBehavior = false;
+            this.listViewProducts.View = System.Windows.Forms.View.Details;
             // 
             // ProductColumn
             // 
             this.ProductColumn.Text = "Product";
-            this.ProductColumn.Width = 176;
+            this.ProductColumn.Width = 171;
             // 
             // QuantityColumn
             // 
@@ -115,8 +119,15 @@
             this.PriceColumn.Text = "Price";
             this.PriceColumn.Width = 130;
             // 
+            // Category
+            // 
+            this.Category.DisplayIndex = 4;
+            this.Category.Text = "Category";
+            this.Category.Width = 125;
+            // 
             // AvailableColumn
             // 
+            this.AvailableColumn.DisplayIndex = 3;
             this.AvailableColumn.Text = "Available";
             this.AvailableColumn.Width = 149;
             // 
@@ -124,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 548);
+            this.ClientSize = new System.Drawing.Size(1304, 548);
             this.Controls.Add(this.panel1);
             this.Name = "SellerForm";
             this.Text = "SellerForm";
@@ -138,7 +149,7 @@
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView listViewCategory;
+        private System.Windows.Forms.ListView listViewProducts;
         private System.Windows.Forms.ColumnHeader ProductColumn;
         private System.Windows.Forms.ColumnHeader QuantityColumn;
         private System.Windows.Forms.ColumnHeader PriceColumn;
@@ -146,5 +157,6 @@
         private System.Windows.Forms.ColumnHeader AvailableColumn;
         private System.Windows.Forms.CheckBox showItemsCheckBox1;
         private System.Windows.Forms.Label filterLabel;
+        private System.Windows.Forms.ColumnHeader Category;
     }
 }
