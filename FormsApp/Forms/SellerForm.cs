@@ -51,7 +51,29 @@ namespace FormsApp.Forms
         }
         private void showItemsCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+            SqlData db = new SqlData();
+            List<Products> products = new List<Products>();
+            var checkBoxValue = showItemsCheckBox1.Checked;
+            var productAvailable = "Unavailable";
+            products = db.GetAvailableProducts(checkBoxValue);
+            if (checkBoxValue == true)
+            {
+                foreach (var product in products)
+                {
+                    listViewProducts.Items.Clear();
+                    if (product.Available == true)
+                    {
+                        productAvailable = "Available";
+                    }
+                    AddProductToList(product.ProdName, product.ProdQTY.ToString(), product.Price.ToString(), product.CategoryName, productAvailable);
 
+                }
+            }
+            else
+            {
+                listViewProducts.Items.Clear();
+                WireUpForm();
+            }
         }
 
         private void filterBox_SelectedIndexChanged(object sender, EventArgs e)

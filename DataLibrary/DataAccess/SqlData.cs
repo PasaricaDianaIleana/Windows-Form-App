@@ -124,7 +124,20 @@ namespace DataLibrary.DataAccess
             }
             return products;
         }
-    
+        public List<Products> GetAvailableProducts(bool available)
+        {
+            List<Products> products;
+            using(IDbConnection connection= new SqlConnection(Helper.ConnectionStringVal("ShopDB")))
+            {
+                var c = new DynamicParameters();
+                c.Add("@Available", available);
+                products = connection.Query<Products>("dbo.spGetAvailableProducts", new
+                {
+                    Available = available
+                }, commandType: CommandType.StoredProcedure).ToList();
+            }
+            return products;
+        }
         public int Login(Login login)
         {
             var result=0;
@@ -173,5 +186,7 @@ namespace DataLibrary.DataAccess
                 connection.Execute("dbo.spUpdateProduct", p, commandType: CommandType.StoredProcedure);
             }
         }
+
+        
     }
 }

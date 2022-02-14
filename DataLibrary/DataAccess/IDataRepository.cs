@@ -25,5 +25,7 @@ namespace DataLibrary.DataAccess
         void UpdateProduct(Products model, int productId);
 
         List<Products> ApplyFiltere(int id);
+
+        List<Products> GetAvailableProducts(bool available);
       }
 }
